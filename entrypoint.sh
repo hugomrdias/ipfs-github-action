@@ -32,10 +32,8 @@ update_github_status () {
 
 update_github_status "pending" "Pinnning to IPFS cluster" "$INPUT_IPFS_GATEWAY"
 echo "update state $?"
-
 # pin to cluster
 ipfs-cluster-ctl \
-    --debug \
     --host "$INPUT_CLUSTER_HOST" \
     --basic-auth "$INPUT_CLUSTER_USER:$INPUT_CLUSTER_PASSWORD" \
     add \
@@ -43,5 +41,4 @@ ipfs-cluster-ctl \
     --cid-version 1 \
     --name "$PIN_NAME" \
     --recursive "$INPUT_DIR"
-
 echo "pin $?"

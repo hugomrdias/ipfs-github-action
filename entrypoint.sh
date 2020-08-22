@@ -31,7 +31,7 @@ update_github_status () {
 }
 
 update_github_status "pending" "Pinnning to IPFS cluster" "$INPUT_IPFS_GATEWAY"
-
+echo "update state $?"
 # pin to cluster
 root_cid=$(ipfs-cluster-ctl \
     --host "$INPUT_CLUSTER_HOST" \
@@ -41,7 +41,7 @@ root_cid=$(ipfs-cluster-ctl \
     --cid-version 1 \
     --name "$PIN_NAME" \
     --recursive "$INPUT_DIR" )
-
+echo "pin $?"
 echo "output - $root_cid"
 
 preview_url="https://$root_cid.ipfs.$INPUT_IPFS_GATEWAY"

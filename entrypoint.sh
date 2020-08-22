@@ -27,7 +27,7 @@ update_github_status () {
     --arg context "$CONTEXT" \
     '{ state: $state, target_url: $target_url, description: $description, context: $context }' )
 
-  curl --silent --output /dev/null -X POST -H "Authorization: token $GITHUB_TOKEN" -H 'Content-Type: application/json' --data "$params" $STATUS_API_URL
+  curl --output /dev/null -X POST -H "Authorization: token $GITHUB_TOKEN" -H 'Content-Type: application/json' --data "$params" $STATUS_API_URL
 }
 
 update_github_status "pending" "Pinnning to IPFS cluster" "$INPUT_IPFS_GATEWAY"

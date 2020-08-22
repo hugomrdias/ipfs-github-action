@@ -38,6 +38,7 @@ ipfs-cluster-ctl \
     --host "$INPUT_CLUSTER_HOST" \
     --basic-auth "$INPUT_CLUSTER_USER:$INPUT_CLUSTER_PASSWORD" \
     add \
+    --debug \
     --local \
     --cid-version 1 \
     --name "$PIN_NAME" \

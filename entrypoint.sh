@@ -42,9 +42,12 @@ root_cid=$(ipfs-cluster-ctl \
     --name "$PIN_NAME" \
     --recursive "$INPUT_DIR" )
 
+echo "output - $root_cid"
+
 preview_url="https://$root_cid.ipfs.$INPUT_IPFS_GATEWAY"
 
 update_github_status "success" "Website added to IPFS" "$preview_url"
+
 
 echo "Pinned to IPFS - $preview_url"
 
